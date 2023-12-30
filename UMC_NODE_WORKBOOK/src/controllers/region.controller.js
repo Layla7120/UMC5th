@@ -23,3 +23,9 @@ export const addingMissions = async (req, res, next) => {
 
   res.send(response(status.SUCCESS, await addmission(req.body)));
 };
+
+export const reviewPreview = async (req, res, next) => {
+  return res.send(
+    response(status.SUCCESS, await getReview(req.params.userId, req.query))
+  );
+};
